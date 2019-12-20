@@ -3,7 +3,9 @@ import defaultState from './default-state';
 
 const user = new schema.Entity('users');
 const card = new schema.Entity('cards', { assignedTo: user });
-const list = new schema.Entity('lists', { cards: [card] });
+const list = new schema.Entity('lists', {
+  cards: [card],
+});
 
 const normalizedLists = normalize(defaultState.lists, [list]);
 const normalizedUsers = normalize(defaultState.users, [user]);
@@ -14,8 +16,8 @@ export const lists = {
 };
 
 export const users = {
-  entities: normalizedLists.entities.users,
-  ids: normalizedLists.result,
+  entities: normalizedUsers.entities.users,
+  ids: normalizedUsers.result,
 };
 
 export const cards = {
@@ -25,6 +27,6 @@ export const cards = {
 
 export default {
   users,
-  cards,
   lists,
+  cards,
 };

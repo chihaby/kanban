@@ -38,5 +38,13 @@
       "id": "1558196570597",
       "title": "Done"
     }
+  ],
+
+  "users": [
+    {
+      "id": "1",
+      "name": "rad",
+      "email": "hello@rad.gmail.com"
+    }
   ]
 }
